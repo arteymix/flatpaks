@@ -1,0 +1,28 @@
+{
+    "id": "org.zotero.Zotero",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "3.22",
+    "sdk": "org.gnome.Sdk",
+    "command": "zotero",
+    "finish-args": [
+        "--socket=x11",
+        "--share=network",
+        "--filesystem=~/.zotero:create",
+        "--filesystem=xdg-documents"
+    ],
+    "modules": [
+        {
+            "name": "zotero",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mkdir /app/bin",
+                "cp -R . /app/bin"
+            ],
+            "sources": [{
+                "type": "archive",
+                "url": "https://download.zotero.org/standalone/4.0.29.10/Zotero-4.0.29.10_linux-x86_64.tar.bz2",
+                "sha256": "d45ecb42a7b4da991892dbbe6229794f66b033a800e465f1a2190462fadacf49"
+            }]
+        }
+    ]
+}
